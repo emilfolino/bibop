@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_133821) do
+ActiveRecord::Schema.define(version: 2019_11_20_134951) do
 
   create_table "papers", force: :cascade do |t|
     t.text "authors"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_133821) do
     t.text "title"
     t.text "notes"
     t.text "bibtex"
+    t.text "tags"
   end
 
   create_table "tags", force: :cascade do |t|
