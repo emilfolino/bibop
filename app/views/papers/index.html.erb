@@ -1,31 +1,31 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Papers</h1>
+<%= link_to 'New Paper', new_paper_path %>
+<br>
 
-<table class="table table-striped">
+<table class="table table-striped" id="papers-table">
   <thead>
     <tr>
       <th>Title</th>
       <th>Authors</th>
       <th>Abstract</th>
-      <th colspan="3"></th>
+      <th>Notes</th>
+      <th>Tags</th>
     </tr>
   </thead>
 
   <tbody>
     <% @papers.each do |paper| %>
       <tr>
-        <td><%= paper.title %></td>
+        <td><%= link_to paper.title, paper %></td>
         <td><%= paper.authors %></td>
         <td><%= paper.abstract %></td>
-        <td><%= link_to 'Show', paper %></td>
-        <td><%= link_to 'Edit', edit_paper_path(paper) %></td>
-        <td><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= paper.notes %></td>
+        <td><%= paper.tags %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Paper', new_paper_path %>
